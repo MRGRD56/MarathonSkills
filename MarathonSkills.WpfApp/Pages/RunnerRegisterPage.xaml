@@ -1,0 +1,19 @@
+﻿<Page x:Class="MarathonSkills.WpfApp.Pages.RunnerRegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.WpfApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Регистрация бегуна">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Я участвовал ранее" Style="{DynamicResource BigButton}" FontStyle="Italic" Margin="0 0 0 10" Click="Authorize_Click"/>
+            <Button Content="Я новый участник" Style="{DynamicResource BigButton}" FontStyle="Italic"/>
+        </StackPanel>
+        <Button Content="Войти" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="85" Margin="0 0 15 15" 
+                Style="{DynamicResource SmallButton}"  Click="Authorize_Click"/>
+    </Grid>
+</Page>

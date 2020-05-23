@@ -1,0 +1,75 @@
+﻿<Page x:Class="MarathonSkills.WpfApp.Pages.RunnerSponsor"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:MarathonSkills.WpfApp.Pages"
+	  mc:Ignorable="d" 
+	  d:DesignHeight="450" d:DesignWidth="800"
+	  Title="Спонсор бегуна">
+
+	<Grid>
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Label Content="Спонсор бегуна" Style="{DynamicResource GrayHeader}" HorizontalAlignment="Center"/>
+			<Label Content="  Пожалуйста, выберите бегуна, которого вы хотели бы спонсировать, и сумму,&#xA;которую вы хотели бы пожертвовать. Спасибо за вашу поддержку бегунов и их&#xA;                                       благотворительных учреждений." 
+				   HorizontalAlignment="Center" Style="{DynamicResource DarkGrayLabel}"/>
+			<StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+				<StackPanel>
+					<StackPanel.Resources>
+						<Style TargetType="TextBox">
+							<Setter Property="Height" Value="25"/>
+							<Setter Property="Width" Value="200"/>
+							<Setter Property="FontSize" Value="14"/>
+						</Style>
+					</StackPanel.Resources>
+					<Label Content="Информация о спонсоре" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
+					<StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Right">
+						<Label Content="Ваше имя: " Style="{DynamicResource DarkGrayLabel}"/>
+						<TextBox Text=""/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Right">
+						<Label Content="Бегун: " Style="{DynamicResource DarkGrayLabel}"/>
+						<ListBox x:Name="RunnersLB" Width="200"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Right">
+						<Label Content="Влад-ц карты: " Style="{DynamicResource DarkGrayLabel}"/>
+						<TextBox Text=""/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Right">
+						<Label Content="Номер карты: " Style="{DynamicResource DarkGrayLabel}"/>
+						<TextBox Text=""/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal" Margin="-8 10 0 0" HorizontalAlignment="Left">
+						<Label Content="Срок действия: " Style="{DynamicResource DarkGrayLabel}"/>
+						<StackPanel Orientation="Horizontal">
+							<TextBox Text="" Width="30"/>
+							<TextBox Text="" Width="60" Margin="10 0 0 0"/>
+						</StackPanel>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal" Margin="29 10 0 0" HorizontalAlignment="Left">
+						<Label Content="CVC/CVV: " Style="{DynamicResource DarkGrayLabel}"/>
+						<TextBox Text="" Width="50"/>
+					</StackPanel>
+				</StackPanel>
+				<StackPanel Margin="50 0 0 0" HorizontalAlignment="Center">
+					<Label Content="Благотворительность" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
+					<StackPanel Orientation="Horizontal">
+						<Label Content="Фонд Кошек" FontSize="16" Margin="35 0 0 0"/>
+						<Image Source="/Images/outline_info_black_24dp.png" Margin="20 0 0 0" MouseLeftButtonDown="ShowCharityInfo" Cursor="Hand"/>
+					</StackPanel>
+					<Label Content="Сумма пожертвования" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center" Margin="0 20 0 0"/>
+					<Label x:Name="SumLabel" Content="$50" HorizontalAlignment="Center" FontSize="50" Foreground="Gray" FontWeight="DemiBold" Padding="0"/>
+					<StackPanel Orientation="Horizontal" Height="25" Margin="0 8 0 0">
+						<Button x:Name="MinusButton" Margin="30 0 0 0" Content="-" FontSize="18" Padding="0" Width="30" Height="25" FontWeight="Bold" Style="{DynamicResource SmallButton}" Click="MinusButton_Click"/>
+						<TextBox x:Name="SumTB" Width="70" Margin="8 0" FontSize="14" Text="50" HorizontalContentAlignment="Center" TextChanged="SumTB_TextChanged" PreviewTextInput="SumTB_PreviewTextInput"/>
+						<Button x:Name="PlusButton" Content="+" FontSize="18" Padding="0" Width="30" Height="Auto" FontWeight="Bold" Style="{DynamicResource SmallButton}" Click="PlusButton_Click"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 40 0 0">
+						<Button Content="Заплатить" Style="{DynamicResource SmallButton}" Width="90" FontWeight="DemiBold"/>
+						<Button Content="Отмена" Style="{DynamicResource SmallButton}" Width="80" FontWeight="DemiBold" Margin="15 0 0 0"/>
+					</StackPanel>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</Page>

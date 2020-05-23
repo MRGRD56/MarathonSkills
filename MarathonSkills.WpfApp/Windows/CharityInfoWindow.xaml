@@ -1,0 +1,18 @@
+﻿<Window x:Class="MarathonSkills.WpfApp.Windows.CharityInfoWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:MarathonSkills.WpfApp.Windows"
+		mc:Ignorable="d"
+		Title="Благотворительная организация" Height="350" Width="500" ResizeMode="NoResize">
+	<Grid>
+		<StackPanel HorizontalAlignment="Center">
+			<Label x:Name="HeaderLabel" Content="Sample Text" FontSize="20" HorizontalAlignment="Center"/>
+			<Image x:Name="Logo" Margin="0 15" VerticalAlignment="Center" Height="90" Source="/Images/outline_info_black_24dp.png"/>
+			<ScrollViewer VerticalScrollBarVisibility="Auto">
+				<TextBlock x:Name="DercriptionTB" Width="430" Height="150" TextWrapping="Wrap" FontSize="16" Text="sdf;ljhds fjsdhosdhfo hsdpof sdpf hsdpfo hsdopfh sdipjfh dsiph fsdjh flkjsdhfl jdshfjsdhfl jdshfjdshkfjsdhlkfj hsdkfjhdsklfj dshf dsfklsdh fklds hfjkdsh fklsjdh ljhds fjsdhosdhfo hsdpof sdpf hsdpfo hsdopfh sdipjfh dsiph fsdjh flkjsdhfl jdshfjsdhfl jdshfjdshkfjsdhlkfj hsdkfjhdsklfj dshf dsfklsdh fklds hfjkdsh fklsjdh ljhds fjsdhosdhfo hsdpof sdpf hsdpfo hsdopfh sdipjfh dsiph fsdjh flkjsdhfl jdshfjsdhfl jdshfjdshkfjsdhlkfj hsdkfjhdsklfj dshf dsfklsdh fklds hfjkdsh fklsjdh ljhds fjsdhosdhfo hsdpof sdpf hsdpfo hsdopfh sdipjfh dsiph fsdjh flkjsdhfl jdshfjsdhfl jdshfjdshkfjsdhlkfj hsdkfjhdsklfj dshf dsfklsdh fklds hfjkdsh fklsjdh ljhds fjsdhosdhfo hsdpof sdpf hsdpfo hsdopfh sdipjfh dsiph fsdjh flkjsdhfl jdshfjsdhfl jdshfjdshkfjsdhlkfj hsdkfjhdsklfj dshf dsfklsdh fklds hfjkdsh fklsjdh"/>
+			</ScrollViewer>
+		</StackPanel>
+	</Grid>
+</Window>
