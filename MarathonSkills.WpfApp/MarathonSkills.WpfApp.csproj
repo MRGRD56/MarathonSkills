@@ -146,6 +146,7 @@
     <Compile Include="Pages\SponsorshipConfirmationPage.xaml.cs">
       <DependentUpon>SponsorshipConfirmationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\CharityListPageVM.cs" />
     <Compile Include="ViewModel\RunnerExt.cs" />
     <Compile Include="ViewModel\RunnerSporsorPageVM.cs" />
     <Compile Include="Windows\CharityInfoWindow.xaml.cs">

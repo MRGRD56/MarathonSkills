@@ -33,8 +33,6 @@ namespace MarathonSkills.WpfApp.Pages
 			InitializeComponent();
 			MW = mw;
 
-			//TODO
-
 			DataContext = new RunnerSporsorPageVM();
 
 			//var col = App.DbContext.Users.ToObsCol();

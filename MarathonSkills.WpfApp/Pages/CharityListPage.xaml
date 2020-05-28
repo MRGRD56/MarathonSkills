@@ -6,9 +6,29 @@
       xmlns:local="clr-namespace:MarathonSkills.WpfApp.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CharityListPage">
+      Title="Список благотворительных организаций">
 
-    <Grid>
-        
-    </Grid>
+	<Grid>
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Label Content="Список благотворительных организаций" Style="{DynamicResource GrayHeader}" HorizontalAlignment="Center"/>
+			<Label Content="   Это - список всех благотворительных учреждений, которые поддерживаются в&#xD;&#xA;Marathon Skills 2020. Спасибо за помощь вы поддерживаете их, спонсируя бегунов!" 
+                   HorizontalAlignment="Center" Style="{DynamicResource DarkGrayLabel}"/>
+			<!--<ScrollViewer Margin="0 15 0 0" HorizontalScrollBarVisibility="Auto">-->
+			<ListBox x:Name="CharitiesLB" ItemsSource="{Binding Path=Charities}" Height="310" Width="700" BorderThickness="0" Margin="0 5 0 0">
+				<!--TODO-->
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<StackPanel Orientation="Horizontal" Margin="0 2">
+							<Image Source="{Binding Path=CharityLogo}" Width="100" VerticalAlignment="Top" Margin="0 5 0 0"/>
+							<StackPanel Margin="10 0 0 0">
+								<Label Content="{Binding Path=CharityName}" Style="{DynamicResource DarkGrayLabel}" FontSize="18" FontWeight="DemiBold"/>
+								<TextBlock Text="{Binding Path=CharityDescription}" TextWrapping="Wrap" Width="555"/>
+							</StackPanel>
+						</StackPanel>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+			<!--</ScrollViewer>-->
+		</StackPanel>
+	</Grid>
 </Page>

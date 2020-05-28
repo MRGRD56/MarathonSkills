@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarathonSkills.WpfApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace MarathonSkills.WpfApp.Pages
 	/// </summary>
 	public partial class CharityListPage : Page
 	{
-		public CharityListPage()
+		private MainWindow MW { get; }
+
+		public CharityListPage(MainWindow mw)
 		{
 			InitializeComponent();
+			MW = mw;
+
+			DataContext = new CharityListPageVM();
 		}
 	}
 }

@@ -30,7 +30,7 @@ namespace MarathonSkills.WpfApp.Pages
 
         private void CharityListButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MW.MainFrame.Navigate(new CharityListPage(MW));
         }
     }
 }
