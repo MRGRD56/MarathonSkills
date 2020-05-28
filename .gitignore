@@ -340,5 +340,5 @@ ASALocalRun/
 healthchecksdb
 
 ## MY CODE
-/S_Q_L/**/
+#/S_Q_L/**/
 *.lnk
