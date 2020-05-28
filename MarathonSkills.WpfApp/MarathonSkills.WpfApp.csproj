@@ -93,6 +93,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DataModels\Charity.cs" />
+    <Compile Include="Extensions\IEnumerableExtension.cs" />
     <Compile Include="Extensions\Int32Extension.cs" />
     <Compile Include="DataModels\Country.cs" />
     <Compile Include="DataModels\Event.cs" />
@@ -100,6 +101,11 @@
     <Compile Include="DataModels\Gender.cs" />
     <Compile Include="DataModels\Marathon.cs" />
     <Compile Include="MarathonSkillsDb.cs" />
+    <Compile Include="Migrations\202005231134541_Creation.cs" />
+    <Compile Include="Migrations\202005231134541_Creation.Designer.cs">
+      <DependentUpon>202005231134541_Creation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
@@ -124,6 +130,8 @@
     <Compile Include="DataModels\Timesheet.cs" />
     <Compile Include="DataModels\User.cs" />
     <Compile Include="DataModels\Volunteer.cs" />
+    <Compile Include="ViewModel\RunnerExt.cs" />
+    <Compile Include="ViewModel\RunnerSporsorPageVM.cs" />
     <Compile Include="Windows\CharityInfoWindow.xaml.cs">
       <DependentUpon>CharityInfoWindow.xaml</DependentUpon>
     </Compile>
@@ -153,6 +161,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202005231134541_Creation.resx">
+      <DependentUpon>202005231134541_Creation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

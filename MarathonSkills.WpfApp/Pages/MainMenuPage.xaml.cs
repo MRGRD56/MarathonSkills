@@ -27,6 +27,7 @@ namespace MarathonSkills.WpfApp.Pages
 		{
 			InitializeComponent();
 			MW = mw;
+
 		}
 
 		private void RunnerRegister_Click(object sender, RoutedEventArgs e)

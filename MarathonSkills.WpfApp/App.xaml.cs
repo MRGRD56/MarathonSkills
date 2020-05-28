@@ -13,6 +13,6 @@ namespace MarathonSkills.WpfApp
     /// </summary>
     public partial class App : Application
     {
-
+        public static MarathonSkillsDb DbContext { get; set; } = new MarathonSkillsDb();
     }
 }
