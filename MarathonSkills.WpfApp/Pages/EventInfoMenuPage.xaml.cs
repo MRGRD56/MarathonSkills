@@ -27,5 +27,10 @@ namespace MarathonSkills.WpfApp.Pages
             InitializeComponent();
             MW = mw;
         }
+
+        private void CharityListButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

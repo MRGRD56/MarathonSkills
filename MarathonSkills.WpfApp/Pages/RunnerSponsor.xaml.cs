@@ -58,7 +58,7 @@ namespace MarathonSkills.WpfApp.Pages
 			SumLabel.Content = $"${SumTB.Text}";
 		}
 
-		private void SumTB_PreviewTextInput(object sender, TextCompositionEventArgs e)
+		private void NumberTB_PreviewTextInput(object sender, TextCompositionEventArgs e)
 		{
 			char inputSymbol = e.Text[0];
 			e.Handled = !char.IsDigit(inputSymbol);
@@ -78,11 +78,52 @@ namespace MarathonSkills.WpfApp.Pages
 
 		private void PayButton_Click(object sender, RoutedEventArgs e)
 		{
-			#region ПРОВЕРКА ДАННЫХ КАРТЫ И ПЛАТЁЖ
-			// coming soon...
+			#region ПЕРВИЧНАЯ ПРОВЕРКА ДАННЫХ КАРТЫ
+			var isAllFilled = SponsorNameTB.Text.IsNotNull() && RunnersCB.SelectedItem != null && CardOwnerTB.Text.IsNotNull()
+				&& CardNumberTB.Text.IsNotNull() && CardMonthTB.Text.IsNotNull() && CardYearTB.Text.IsNotNull() && CardCvcTB.Text.IsNotNull();
+			if (!isAllFilled)
+			{
+				ShowInputError("Не все поля заполнены!");
+				return;
+			}
+
+			var isCnValid = CardNumberTB.Text.Length == 16;
+			var isCvcValid = CardCvcTB.Text.Length == 3;
+
+			var m = CardMonthTB.Text.ToInt();
+			var y = CardYearTB.Text.ToInt();
+			// 05/2020 - дата истечения срока - 01.06.2020 00:00:00
+			var dt = new DateTime(y, m, 1, 0, 0, 0).AddMonths(1); //дата и время истечения срока
+
+			// cm - текущий месяц, cy = текущий год
+			// карта действует, если m >= cm
+			var isDateValid = DateTime.Now.CompareTo(dt) < 0;
+
+			if (!(isCnValid && isCvcValid && isDateValid && isAllFilled))
+			{
+				ShowInputError("Данные введены неверно. Проверьте правильность ввода.");
+				return;
+			}
 			#endregion
 
+			#region ПЛАТЁЖ
+			// coming soon...
+			#endregion
+			
+			//TODO: добавление спонсора в БД (Sponsorship)
 
+			string runnerName = ((RunnerExt)RunnersCB.SelectedItem).ToString();
+			string charityName = CharityNameLabel.Content.ToString();
+			string sum = SumLabel.Content.ToString();
+			MW.MainFrame.Navigate(new SponsorshipConfirmationPage(MW, runnerName, charityName, sum));
+		}
+
+		private void ShowInputError(string msg) =>
+			MessageBox.Show(msg, "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Error);
+
+		private void CancelButton_Click(object sender, RoutedEventArgs e)
+		{
+			MW.MainFrame.GoBack();
 		}
 	}
 }

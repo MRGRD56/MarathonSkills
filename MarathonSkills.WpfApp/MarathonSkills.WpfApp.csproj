@@ -68,6 +68,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CharityListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\EventInfoMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -77,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\RunnerSponsor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SponsorshipConfirmationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,6 +108,8 @@
     <Compile Include="DataModels\EventType.cs" />
     <Compile Include="DataModels\Gender.cs" />
     <Compile Include="DataModels\Marathon.cs" />
+    <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="MarathonSkillsDb.cs" />
     <Compile Include="Migrations\202005231134541_Creation.cs" />
     <Compile Include="Migrations\202005231134541_Creation.Designer.cs">
@@ -108,6 +118,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CharityListPage.xaml.cs">
+      <DependentUpon>CharityListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EventInfoMenuPage.xaml.cs">
       <DependentUpon>EventInfoMenuPage.xaml</DependentUpon>
@@ -130,6 +143,9 @@
     <Compile Include="DataModels\Timesheet.cs" />
     <Compile Include="DataModels\User.cs" />
     <Compile Include="DataModels\Volunteer.cs" />
+    <Compile Include="Pages\SponsorshipConfirmationPage.xaml.cs">
+      <DependentUpon>SponsorshipConfirmationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\RunnerExt.cs" />
     <Compile Include="ViewModel\RunnerSporsorPageVM.cs" />
     <Compile Include="Windows\CharityInfoWindow.xaml.cs">

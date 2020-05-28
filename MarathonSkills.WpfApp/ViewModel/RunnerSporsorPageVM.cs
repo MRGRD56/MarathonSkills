@@ -14,6 +14,7 @@ namespace MarathonSkills.WpfApp.ViewModel
 
 		public RunnerSporsorPageVM()
 		{
+			//TODO: лучше передавать ещё и Registration.RegistrationId
 			var runnersUsers = App.DbContext.Runners.ToObsCol()
 				.Join(App.DbContext.Users.ToObsCol(),
 				r => r.Email, //Runners
@@ -30,7 +31,11 @@ namespace MarathonSkills.WpfApp.ViewModel
 				e => e.RegistrationId, //RegistrationEvents
 				(rug, e) => new { rug.FirstName, rug.LastName, rug.CountryCode, e.BibNumber, rug.RunnerId });
 
-			RunnersExts = rugEvents.Select(x => new RunnerExt(x.RunnerId, x.FirstName, x.LastName, x.CountryCode, x.BibNumber)).ToObsCol();
+			RunnersExts = rugEvents
+				.Select(x => new RunnerExt(x.RunnerId, x.FirstName, x.LastName, x.CountryCode, x.BibNumber))
+				.OrderBy(x => x.FirstName)
+				.ThenBy(x => x.LastName)
+				.ToObsCol();
 		}
 	}
 }

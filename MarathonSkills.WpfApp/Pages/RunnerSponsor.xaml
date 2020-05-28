@@ -25,7 +25,7 @@
 					<Label Content="Информация о спонсоре" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
 					<StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Right">
 						<Label Content="Ваше имя: " Style="{DynamicResource DarkGrayLabel}"/>
-						<TextBox Text=""/>
+						<TextBox x:Name="SponsorNameTB"/>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Right">
 						<Label Content="Бегун: " Style="{DynamicResource DarkGrayLabel}"/>
@@ -33,40 +33,40 @@
 					</StackPanel>
 					<StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Right">
 						<Label Content="Влад-ц карты: " Style="{DynamicResource DarkGrayLabel}" ToolTip="Владелец карты"/>
-						<TextBox Text=""/>
+						<TextBox x:Name="CardOwnerTB"/>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Right">
 						<Label Content="Номер карты: " Style="{DynamicResource DarkGrayLabel}"/>
-						<TextBox Text=""/>
+						<TextBox x:Name="CardNumberTB" MaxLength="16" PreviewTextInput="NumberTB_PreviewTextInput"/>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal" Margin="-8 10 0 0" HorizontalAlignment="Left">
 						<Label Content="Срок действия: " Style="{DynamicResource DarkGrayLabel}"/>
 						<StackPanel Orientation="Horizontal">
-							<TextBox Text="" Width="30"/>
-							<TextBox Text="" Width="60" Margin="10 0 0 0"/>
+							<TextBox x:Name="CardMonthTB" Width="30" MaxLength="2" PreviewTextInput="NumberTB_PreviewTextInput"/>
+							<TextBox x:Name="CardYearTB" Width="50" Margin="10 0 0 0" MaxLength="4" PreviewTextInput="NumberTB_PreviewTextInput"/>
 						</StackPanel>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal" Margin="29 10 0 0" HorizontalAlignment="Left">
 						<Label Content="CVC/CVV: " Style="{DynamicResource DarkGrayLabel}"/>
-						<TextBox Text="" Width="50"/>
+						<TextBox x:Name="CardCvcTB" Width="50" MaxLength="3" PreviewTextInput="NumberTB_PreviewTextInput"/>
 					</StackPanel>
 				</StackPanel>
 				<StackPanel Margin="50 0 0 0" HorizontalAlignment="Center">
 					<Label Content="Благотворительность" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
 					<StackPanel Orientation="Horizontal">
-						<Label Content="Фонд Кошек" FontSize="16" Margin="35 0 0 0"/>
+						<Label x:Name="CharityNameLabel" Content="Фонд Кошек" FontSize="16" Margin="35 0 0 0"/>
 						<Image Source="/Images/outline_info_black_24dp.png" Margin="20 0 0 0" MouseLeftButtonDown="ShowCharityInfo" Cursor="Hand"/>
 					</StackPanel>
 					<Label Content="Сумма пожертвования" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center" Margin="0 20 0 0"/>
 					<Label x:Name="SumLabel" Content="$50" HorizontalAlignment="Center" FontSize="50" Foreground="Gray" FontWeight="DemiBold" Padding="0"/>
 					<StackPanel Orientation="Horizontal" Height="25" Margin="0 8 0 0">
 						<Button x:Name="MinusButton" Margin="30 0 0 0" Content="-" FontSize="18" Padding="0" Width="30" Height="25" FontWeight="Bold" Style="{DynamicResource SmallButton}" Click="MinusButton_Click"/>
-						<TextBox x:Name="SumTB" Width="70" Margin="8 0" FontSize="14" Text="50" HorizontalContentAlignment="Center" TextChanged="SumTB_TextChanged" PreviewTextInput="SumTB_PreviewTextInput"/>
+						<TextBox x:Name="SumTB" Width="70" Margin="8 0" FontSize="14" Text="50" HorizontalContentAlignment="Center" TextChanged="SumTB_TextChanged" PreviewTextInput="NumberTB_PreviewTextInput"/>
 						<Button x:Name="PlusButton" Content="+" FontSize="18" Padding="0" Width="30" Height="Auto" FontWeight="Bold" Style="{DynamicResource SmallButton}" Click="PlusButton_Click"/>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 40 0 0">
 						<Button Content="Заплатить" Style="{DynamicResource SmallButton}" Width="90" FontWeight="DemiBold" Click="PayButton_Click"/>
-						<Button Content="Отмена" Style="{DynamicResource SmallButton}" Width="80" FontWeight="DemiBold" Margin="15 0 0 0"/>
+						<Button Content="Отмена" Style="{DynamicResource SmallButton}" Width="80" FontWeight="DemiBold" Margin="15 0 0 0" Click="CancelButton_Click"/>
 					</StackPanel>
 				</StackPanel>
 			</StackPanel>
