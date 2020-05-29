@@ -1,7 +1,7 @@
 MarathonSkills ~~2016~~ 2020
 ============================
 <details>
-  <summary>Сессия 1</summary>
+  <summary>Сессия 1 🕔</summary>
 1.1 ✅
   <br>
 1.2 ✅
