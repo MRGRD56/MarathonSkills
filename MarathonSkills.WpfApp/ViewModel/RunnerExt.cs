@@ -12,15 +12,18 @@ namespace MarathonSkills.WpfApp.ViewModel
 		/// RunnerExt
 		/// </summary>
 		/// <param name="id">RunnerId</param>
+		/// <param name="ri">RegistrationId</param>
 		/// <param name="fn">FirstName</param>
 		/// <param name="ln">LastName</param>
 		/// <param name="cc">CountryCode</param>
 		/// <param name="bn">BibNumber</param>
 		/// <param name="ci">CharityId</param>
-		public RunnerExt(int id, string fn, string ln, string cc, short? bn, int ci) => 
-			(RunnerId, FirstName, LastName, CountryCode, BibNumber, CharityId) = (id, fn, ln, cc, bn, ci);
+		public RunnerExt(int id, int ri, string fn, string ln, string cc, short? bn, int ci) => 
+			(RunnerId, RegistrationId, FirstName, LastName, CountryCode, BibNumber, CharityId) = (id, ri, fn, ln, cc, bn, ci);
 
 		public int RunnerId { get; set; }
+
+		public int RegistrationId { get; set; }
 
 		public string FirstName { get; set; }
 

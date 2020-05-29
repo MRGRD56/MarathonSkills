@@ -28,12 +28,14 @@ namespace MarathonSkills.WpfApp.Pages
 	{
 		private MainWindow MW { get; }
 
+		private RunnerSporsorPageVM thisDataContext { get; } = new RunnerSporsorPageVM();
+
 		public RunnerSponsor(MainWindow mw)
 		{
 			InitializeComponent();
 			MW = mw;
 
-			DataContext = new RunnerSporsorPageVM();
+			DataContext = thisDataContext;
 
 			//var col = App.DbContext.Users.ToObsCol();
 			//var selCol = col.Select(x => $"{x.FirstName} {x.LastName}");
@@ -43,7 +45,12 @@ namespace MarathonSkills.WpfApp.Pages
 
 		private void ShowCharityInfo(object sender, MouseButtonEventArgs e)
 		{
-			new Windows.CharityInfoWindow("Фонд кошек", "/Images/CharityLogos/arise-logo.png", "Some description").ShowDialog();
+			var charity = thisDataContext.SelectedCharity;
+
+			if (charity != null) //TODO: добавить скролл в CharityInfoWindow для описания
+			{ 
+				new Windows.CharityInfoWindow(charity.CharityName, $"/Images/CharityLogos/{charity.CharityLogo}", charity.CharityDescription).ShowDialog();
+			}
 		}
 
 		private void SumTB_TextChanged(object sender, TextChangedEventArgs e)
@@ -76,12 +83,18 @@ namespace MarathonSkills.WpfApp.Pages
 
 		private void PayButton_Click(object sender, RoutedEventArgs e)
 		{
-			#region ПЕРВИЧНАЯ ПРОВЕРКА ДАННЫХ КАРТЫ
+			#region ПРОВЕРКА ДАННЫХ
 			var isAllFilled = SponsorNameTB.Text.IsNotNull() && RunnersCB.SelectedItem != null && CardOwnerTB.Text.IsNotNull()
 				&& CardNumberTB.Text.IsNotNull() && CardMonthTB.Text.IsNotNull() && CardYearTB.Text.IsNotNull() && CardCvcTB.Text.IsNotNull();
 			if (!isAllFilled)
 			{
 				ShowInputError("Не все поля заполнены!");
+				return;
+			}
+
+			if (SumTB.Text.ToInt() <= 0)
+			{
+				ShowInputError("Пожалуйста, выберите сумму пожертвования.");
 				return;
 			}
 
@@ -108,12 +121,22 @@ namespace MarathonSkills.WpfApp.Pages
 			// coming soon...
 			#endregion
 			
-			//TODO: добавление спонсора в БД (Sponsorship)
+			var runner = (RunnerExt)RunnersCB.SelectedItem;
+			//string charityName = CharityNameLabel.Content.ToString();
+			int sum = SumTB.Text.ToInt();
+			var charity = thisDataContext.SelectedCharity;
 
-			string runnerName = ((RunnerExt)RunnersCB.SelectedItem).ToString();
-			string charityName = CharityNameLabel.Content.ToString();
-			string sum = SumLabel.Content.ToString();
-			MW.MainFrame.Navigate(new SponsorshipConfirmationPage(MW, runnerName, charityName, sum));
+			#region ДОБАВЛЕНИЕ СПОНСОРА В БД
+			App.DbContext.Sponsorships.Add(new Sponsorship 
+			{ 
+				RegistrationId = runner.RegistrationId, 
+				Amount = sum, 
+				SponsorName = SponsorNameTB.Text.Trim() 
+			});
+			App.DbContext.SaveChanges();
+			#endregion
+
+			MW.MainFrame.Navigate(new SponsorshipConfirmationPage(MW, runner.ToString(), charity.CharityName, $"${sum}"));
 		}
 
 		private void ShowInputError(string msg) =>
@@ -122,6 +145,14 @@ namespace MarathonSkills.WpfApp.Pages
 		private void CancelButton_Click(object sender, RoutedEventArgs e)
 		{
 			MW.MainFrame.GoBack();
+		}
+
+		private void RunnersCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			var sel = (RunnerExt)RunnersCB.SelectedItem;
+			//MessageBox.Show(sel.ToString());
+			thisDataContext.SelectedCharity = App.DbContext.Charities.ToObsCol().Where(x => x.CharityId == sel.CharityId).FirstOrDefault();
+			CharityNameLabel.Content = thisDataContext.SelectedCharity?.CharityName;
 		}
 	}
 }

@@ -43,7 +43,7 @@ namespace MarathonSkills.WpfApp.ViewModel
 				(ruge, c) => new { ruge.FirstName, ruge.LastName, ruge.CountryCode, ruge.BibNumber, ruge.RunnerId, ruge.RegistrationId, c.CharityId });
 
 			RunnersExts = rugEvents
-				.Select(x => new RunnerExt(x.RunnerId, x.FirstName, x.LastName, x.CountryCode, x.BibNumber, x.CharityId))
+				.Select(x => new RunnerExt(x.RunnerId, x.RegistrationId, x.FirstName, x.LastName, x.CountryCode, x.BibNumber, x.CharityId))
 				.OrderBy(x => x.FirstName)
 				.ThenBy(x => x.LastName)
 				.ToObsCol();
