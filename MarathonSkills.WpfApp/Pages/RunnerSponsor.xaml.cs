@@ -47,7 +47,7 @@ namespace MarathonSkills.WpfApp.Pages
 		{
 			var charity = thisDataContext.SelectedCharity;
 
-			if (charity != null) //TODO: добавить скролл в CharityInfoWindow для описания
+			if (charity != null)
 			{ 
 				new Windows.CharityInfoWindow(charity.CharityName, $"/Images/CharityLogos/{charity.CharityLogo}", charity.CharityDescription).ShowDialog();
 			}

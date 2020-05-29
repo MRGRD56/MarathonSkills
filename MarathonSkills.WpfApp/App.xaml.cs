@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarathonSkills.WpfApp.DataModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -14,5 +15,7 @@ namespace MarathonSkills.WpfApp
     public partial class App : Application
     {
         public static MarathonSkillsDb DbContext { get; set; } = new MarathonSkillsDb();
+
+        public static User CurrentUser { get; set; }
     }
 }

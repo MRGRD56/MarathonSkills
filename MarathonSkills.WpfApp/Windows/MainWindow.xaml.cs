@@ -143,10 +143,10 @@ namespace MarathonSkills.WpfApp
 			var hh = GetHoursWord(h);
 			var m = time.Minutes;
 			var mm = GetMinutesWord(m);
-			var s = time.Seconds;
-			var ss = GetSecondsWord(s);
-			RemainingTimeLabel.Content = $"{d} {dd} {h} {hh} {m} {mm} {s} {ss} до старта марафона!";
-			//строка по типу "23 дня 6 часов 1 минута 56 секунд до старта марафона!"
+			//var s = time.Seconds;
+			//var ss = GetSecondsWord(s);
+			RemainingTimeLabel.Content = $"{d} {dd} {h} {hh} {m} {mm} до старта марафона!";
+			//строка по типу "23 дня 6 часов 1 минута /*56 секунд*/ до старта марафона!"
 		}
 
 		/// <summary>

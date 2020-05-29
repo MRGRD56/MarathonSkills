@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:MarathonSkills.WpfApp.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Авторизация">
+      Title="Авторизация" Loaded="Page_Loaded">
 
     <Grid>
         <StackPanel Margin="0 0 0 50" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -15,14 +15,14 @@
                    HorizontalAlignment="Center" Style="{DynamicResource DarkGrayLabel}"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
                 <Label Content="Email:" Style="{DynamicResource DarkGrayLabel}"/>
-                <TextBox Width="220" Margin="10 0 0 0"/>
+                <TextBox x:Name="EmailTB" Width="220" Margin="10 0 0 0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="-15 20 0 0">
                 <Label Content="Пароль:" Style="{DynamicResource DarkGrayLabel}"/>
-                <PasswordBox Width="220" Margin="10 0 0 0" Style="{DynamicResource PasswordBoxStyle}"/>
+                <PasswordBox x:Name="PasswordPB" Width="220" Margin="10 0 0 0" Style="{DynamicResource PasswordBoxStyle}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="-28 20 0 0">
-                <Button Content="Войти" Width="60" Height="25" Style="{DynamicResource SmallButton}"/>
+                <Button Content="Войти" Width="60" Height="25" Style="{DynamicResource SmallButton}" Click="AuthButton_Click"/>
                 <Button Content="Отмена" Width="60" Height="25" Style="{DynamicResource SmallButton}" Margin="15 0 0 0" Click="GoBack_Click"/>
             </StackPanel>
         </StackPanel>

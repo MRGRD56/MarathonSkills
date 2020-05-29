@@ -64,6 +64,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\AdministratorMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AuthorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -72,7 +76,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CoordinatorMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\EventInfoMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RunnerMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -85,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SponsorshipConfirmationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AuthTypeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,14 +132,23 @@
       <DependentUpon>202005231134541_Creation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Pages\AdministratorMenuPage.xaml.cs">
+      <DependentUpon>AdministratorMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CharityListPage.xaml.cs">
       <DependentUpon>CharityListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CoordinatorMenuPage.xaml.cs">
+      <DependentUpon>CoordinatorMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EventInfoMenuPage.xaml.cs">
       <DependentUpon>EventInfoMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RunnerMenuPage.xaml.cs">
+      <DependentUpon>RunnerMenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RunnerRegisterPage.xaml.cs">
       <DependentUpon>RunnerRegisterPage.xaml</DependentUpon>
@@ -149,6 +174,9 @@
     <Compile Include="ViewModel\CharityListPageVM.cs" />
     <Compile Include="ViewModel\RunnerExt.cs" />
     <Compile Include="ViewModel\RunnerSporsorPageVM.cs" />
+    <Compile Include="Windows\AuthTypeWindow.xaml.cs">
+      <DependentUpon>AuthTypeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\CharityInfoWindow.xaml.cs">
       <DependentUpon>CharityInfoWindow.xaml</DependentUpon>
     </Compile>
