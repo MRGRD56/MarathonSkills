@@ -338,3 +338,7 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+## MY CODE
+#/S_Q_L/**/
+*.lnk
