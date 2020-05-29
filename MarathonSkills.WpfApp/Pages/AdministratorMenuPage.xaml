@@ -9,6 +9,17 @@
       Title="Меню администратора">
 
     <Grid>
-        
-    </Grid>
+		<StackPanel Margin="0 0 0 107" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Label Content="Меню администратора" Style="{DynamicResource GrayHeader}" HorizontalAlignment="Center" Margin="0 0 0 25"/>
+			<StackPanel Orientation="Horizontal">
+				<Button Content="Пользователи" Style="{DynamicResource BigButton}" FontStyle="Italic" Width="230" Height="75"/>
+				<Button Content="Волонтёры" Style="{DynamicResource BigButton}" FontStyle="Italic" Width="230" Margin="12 0 0 0"  Height="75"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" Margin="0 12 0 0">
+				<Button Content="Благотворительные&#xD;&#xA;       организации" Style="{DynamicResource BigButton}" FontStyle="Italic" Width="230"  Height="75"/>
+				<Button Content="Инвентарь" Style="{DynamicResource BigButton}" FontStyle="Italic" Width="230" 
+                        Margin="12 0 0 0"  Height="75"/>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
 </Page>

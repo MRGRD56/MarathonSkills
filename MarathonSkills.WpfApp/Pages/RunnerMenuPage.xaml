@@ -9,6 +9,20 @@
       Title="Меню бегуна">
 
     <Grid>
-        
-    </Grid>
+		<StackPanel Margin="0 0 0 20" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Label Content="Меню бегуна" Style="{DynamicResource GrayHeader}" HorizontalAlignment="Center" Margin="0 0 0 25"/>
+			<StackPanel Orientation="Horizontal">
+				<Button Content="Регистрация на&#xD;&#xA;      марафон" Style="{DynamicResource BigButton}" FontStyle="Italic" Width="230" Height="75"/>
+				<Button Content="Мои результаты" Style="{DynamicResource BigButton}" FontStyle="Italic" Width="230" Margin="12 0 0 0"  Height="75"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" Margin="0 12 0 0">
+				<Button Content="Редактирование&#xD;&#xA;      профиля" Style="{DynamicResource BigButton}" FontStyle="Italic" Width="230"  Height="75"/>
+				<Button Content="Мой спонсор" Style="{DynamicResource BigButton}" FontStyle="Italic" Width="230" 
+                        Margin="12 0 0 0"  Height="75"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" Margin="0 12 0 0">
+				<Button Content="Контакты" Style="{DynamicResource BigButton}" FontStyle="Italic" Width="230"  Height="75"/>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
 </Page>
