@@ -7,6 +7,9 @@
 		<Style TargetType="Label">
 			<Setter Property="FontFamily" Value="Open Sans"/>
 		</Style>
+		<Style TargetType="TextBlock">
+			<Setter Property="FontFamily" Value="Open Sans"/>
+		</Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="Open Sans"/>
             <Setter Property="FontWeight" Value="Light"/>

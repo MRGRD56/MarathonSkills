@@ -1,0 +1,30 @@
+﻿<Window x:Class="MarathonSkills.WpfApp.Windows.ContactInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarathonSkills.WpfApp.Windows"
+        mc:Ignorable="d"
+        Title="Контакты" Height="300" Width="430" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+	<Grid>
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5 15">
+			<Label Content="Контакты" Style="{DynamicResource DarkGrayLabel}" FontSize="18" HorizontalAlignment="Center" Margin="0 0 0 20"/>
+
+			<TextBlock TextWrapping="Wrap" FontSize="14">
+				<Run Text="Для получения дополнительной информации пожалуйста свяжитесь с координаторами."/>
+				<LineBreak/>
+				<LineBreak/>
+				<Bold>
+					<Run Text="Телефон: "/>
+				</Bold>
+				<Run Text="+55 11 9988 7766"/>
+				<LineBreak/>
+				<LineBreak/>
+				<Bold>
+					<Run Text="Email: "/>
+				</Bold>
+				<Run Text="coordinators@marathonskills.org"/>
+			</TextBlock>
+		</StackPanel>
+	</Grid>
+</Window>

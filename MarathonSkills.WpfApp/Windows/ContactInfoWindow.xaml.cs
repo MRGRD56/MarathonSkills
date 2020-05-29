@@ -10,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MarathonSkills.WpfApp.Pages
+namespace MarathonSkills.WpfApp.Windows
 {
 	/// <summary>
-	/// Логика взаимодействия для RunnerMenuPage.xaml
+	/// Логика взаимодействия для ContactInfoWindow.xaml
 	/// </summary>
-	public partial class RunnerMenuPage : Page
+	public partial class ContactInfoWindow : Window
 	{
-		private MainWindow MW { get; }
-
-		public RunnerMenuPage(MainWindow mw)
+		public ContactInfoWindow()
 		{
 			InitializeComponent();
-			MW = mw;
-		}
-
-		private void ContactsButton_Click(object sender, RoutedEventArgs e)
-		{
-			new Windows.ContactInfoWindow().ShowDialog();
 		}
 	}
 }
