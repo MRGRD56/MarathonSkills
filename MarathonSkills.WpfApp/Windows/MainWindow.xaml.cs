@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MarathonSkills.WpfApp.Pages;
+using MarathonSkills.WpfApp.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -214,6 +216,32 @@ namespace MarathonSkills.WpfApp
 					FrameGoBack();
 					break;
 				default:
+					break;
+			}
+		}
+
+		private void LogoutButton_Click(object sender, RoutedEventArgs e)
+		{
+			App.CurrentUser = null;
+			LogoutButton.Visibility = Visibility.Hidden;
+			MainFrame.Navigate(new MainMenuPage(this));
+		}
+
+		public void GoToMenu(string type)
+		{
+			switch (type)
+			{
+				case "R":
+					MainFrame.Navigate(new RunnerMenuPage(this));
+					break;
+				case "C":
+					MainFrame.Navigate(new CoordinatorMenuPage(this));
+					break;
+				case "A":
+					MainFrame.Navigate(new AdministratorMenuPage(this));
+					break;
+				default:
+					MessageBox.Show("Неизвестная ошибка.");
 					break;
 			}
 		}

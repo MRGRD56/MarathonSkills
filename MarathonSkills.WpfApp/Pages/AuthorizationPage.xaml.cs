@@ -42,6 +42,12 @@ namespace MarathonSkills.WpfApp.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            if (App.CurrentUser != null)
+            {
+                MW.GoToMenu(App.CurrentUser.RoleId);
+                return;
+            }
+
             var win = new AuthTypeWindow(MW);
             win.ShowDialog();
             ChosenType = win.ChosenType;
@@ -70,21 +76,9 @@ namespace MarathonSkills.WpfApp.Pages
 
             App.CurrentUser = user;
 
-            switch (ChosenType)
-            {
-                case ChosenType.Runner:
-                    MW.MainFrame.Navigate(new RunnerMenuPage(MW));
-                    break;
-                case ChosenType.Coordinator:
-                    MW.MainFrame.Navigate(new CoordinatorMenuPage(MW));
-                    break;
-                case ChosenType.Administrator:
-                    MW.MainFrame.Navigate(new AdministratorMenuPage(MW));
-                    break;
-                default:
-                    ShowError("Неизвестная ошибка.");
-                    break;
-            }
+            MW.LogoutButton.Visibility = Visibility.Visible;
+
+            MW.GoToMenu(ChosenTypeString);
         }
 
         private void ShowError(string msg) => MessageBox.Show(msg, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
