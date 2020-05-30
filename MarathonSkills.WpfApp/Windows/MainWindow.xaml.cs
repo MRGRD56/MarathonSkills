@@ -124,14 +124,14 @@ namespace MarathonSkills.WpfApp
 		/// Возвращает слово, указываемое после количества секунд.
 		/// </summary>
 		/// <param name="s">Количество секунд.</param>
-		private string GetSecondsWord(int s)
-		{
-			if (s == 1 || s == 21 || s == 31 || s == 41 || s == 51)
-				return "секунда";
-			if (s.IsBeth(2, 4) || s.IsBeth(22, 24) || s.IsBeth(32, 34) || s.IsBeth(42, 44) || s.IsBeth(52, 54))
-				return "секунды";
-			return "секунд";
-		}
+		//private string GetSecondsWord(int s)
+		//{
+		//	if (s == 1 || s == 21 || s == 31 || s == 41 || s == 51)
+		//		return "секунда";
+		//	if (s.IsBeth(2, 4) || s.IsBeth(22, 24) || s.IsBeth(32, 34) || s.IsBeth(42, 44) || s.IsBeth(52, 54))
+		//		return "секунды";
+		//	return "секунд";
+		//}
 
 		/// <summary>
 		/// Изменяет отображаемое оставшееся время.
@@ -227,6 +227,10 @@ namespace MarathonSkills.WpfApp
 			MainFrame.Navigate(new MainMenuPage(this));
 		}
 
+		/// <summary>
+		/// Осуществляет переход в соответствующее меню, в зависимости от роли пользователя.
+		/// </summary>
+		/// <param name="type">Роль пользователя.</param>
 		public void GoToMenu(string type)
 		{
 			switch (type)

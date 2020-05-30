@@ -9,7 +9,7 @@ namespace MarathonSkills.WpfApp.ViewModel
 	public class RunnerExt
 	{
 		/// <summary>
-		/// RunnerExt
+		/// Представляет расширенный класс бегуна.
 		/// </summary>
 		/// <param name="id">RunnerId</param>
 		/// <param name="ri">RegistrationId</param>
