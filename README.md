@@ -38,7 +38,7 @@ MarathonSkills ~~2016~~ 2020
 <details>
   <summary>Сессия 2 🕔</summary>
   <br>
-1.1 🕔
+1.1 ✅
   <br>
 1.2 ❌
   <br>
