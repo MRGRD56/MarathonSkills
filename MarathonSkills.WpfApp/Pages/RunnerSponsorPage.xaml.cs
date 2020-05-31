@@ -24,13 +24,13 @@ namespace MarathonSkills.WpfApp.Pages
 	/// <summary>
 	/// Логика взаимодействия для RunnerSponsor.xaml
 	/// </summary>
-	public partial class RunnerSponsor : Page
+	public partial class RunnerSponsorPage : Page
 	{
 		private MainWindow MW { get; }
 
 		private RunnerSporsorPageVM thisDataContext { get; } = new RunnerSporsorPageVM();
 
-		public RunnerSponsor(MainWindow mw)
+		public RunnerSponsorPage(MainWindow mw)
 		{
 			InitializeComponent();
 			MW = mw;

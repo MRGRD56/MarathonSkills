@@ -1,4 +1,4 @@
-﻿<Page x:Class="MarathonSkills.WpfApp.Pages.RunnerSponsor"
+﻿<Page x:Class="MarathonSkills.WpfApp.Pages.RunnerSponsorPage"
 	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -51,9 +51,9 @@
 						<TextBox x:Name="CardCvcTB" Width="50" MaxLength="3" PreviewTextInput="NumberTB_PreviewTextInput"/>
 					</StackPanel>
 				</StackPanel>
-				<StackPanel Margin="50 0 0 0" HorizontalAlignment="Center">
+				<StackPanel Margin="50 0 0 0" HorizontalAlignment="Center" Width="300">
 					<Label Content="Благотворительность" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 						<Label x:Name="CharityNameLabel" Content="Выберите бегуна" FontSize="16" Margin="35 0 0 0"/>
 						<Image Source="/Images/outline_info_black_24dp.png" Margin="20 0 0 0" MouseLeftButtonDown="ShowCharityInfo" Cursor="Hand" ToolTip="Информация о благотворительной организации."/>
 					</StackPanel>

@@ -96,7 +96,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RunnerSponsor.xaml">
+    <Page Include="Pages\RunnerSponsorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,8 +165,8 @@
     <Compile Include="Pages\RunnerRegistrationPage.xaml.cs">
       <DependentUpon>RunnerRegistrationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RunnerSponsor.xaml.cs">
-      <DependentUpon>RunnerSponsor.xaml</DependentUpon>
+    <Compile Include="Pages\RunnerSponsorPage.xaml.cs">
+      <DependentUpon>RunnerSponsorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataModels\Position.cs" />
     <Compile Include="DataModels\RaceKitOption.cs" />

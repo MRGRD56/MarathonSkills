@@ -47,7 +47,7 @@ namespace MarathonSkills.WpfApp.Pages
 
 		private void BeRunnerSponsor_Click(object sender, RoutedEventArgs e)
 		{
-			MW.MainFrame.Navigate(new Pages.RunnerSponsor(MW));
+			MW.MainFrame.Navigate(new Pages.RunnerSponsorPage(MW));
 		}
 	}
 }
