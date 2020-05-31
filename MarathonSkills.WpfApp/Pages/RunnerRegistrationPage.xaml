@@ -59,7 +59,7 @@
 								VerticalAlignment="Center" Background="#EAEAEA" Visibility="Visible">
 							<Label Content="Фото" Foreground="#656565" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 						</Border>
-						<Image x:Name="RunnerPhoto" Source="/Images/RunnersPhotos/TestPhoto.png" Height="120" MaxWidth="250" Visibility="Collapsed"/>
+						<Image x:Name="RunnerPhoto" Height="120" MaxWidth="250" Visibility="Collapsed"/>
 					</Grid>
 					<Label Content="Файл фотографии:" Style="{DynamicResource DarkGrayLabel}"/>
 					<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
@@ -78,7 +78,7 @@
 				</StackPanel>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
-				<Button Style="{DynamicResource SmallButton}" Content="Регистрация" Width="100"/>
+				<Button Style="{DynamicResource SmallButton}" Content="Регистрация" Width="100" Click="RegistrationButton_Click"/>
 				<Button Style="{DynamicResource SmallButton}" Content="Отмена" Width="70" Margin="15 0 0 0" Click="CancelButton_Click"/>
 			</StackPanel>
 		</StackPanel>

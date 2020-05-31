@@ -133,6 +133,7 @@
     <Compile Include="DataModels\EventType.cs" />
     <Compile Include="DataModels\Gender.cs" />
     <Compile Include="DataModels\Marathon.cs" />
+    <Compile Include="Extensions\MessageBoxExtension.cs" />
     <Compile Include="Extensions\ObjectExtension.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="MarathonSkillsDb.cs" />

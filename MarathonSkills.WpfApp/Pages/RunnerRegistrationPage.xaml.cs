@@ -1,4 +1,5 @@
-﻿using MarathonSkills.WpfApp.ViewModel;
+﻿using MarathonSkills.WpfApp.Extensions;
+using MarathonSkills.WpfApp.ViewModel;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static MarathonSkills.WpfApp.Extensions.MessageBoxExtension;
 
 namespace MarathonSkills.WpfApp.Pages
 {
@@ -26,7 +28,20 @@ namespace MarathonSkills.WpfApp.Pages
 
 		public RunnerRegistrationPageVM ThisContext { get; set; } = new RunnerRegistrationPageVM();
 
-		private string SelectedImage { get; set; }
+		private string selectedImage;
+		private string SelectedImage
+		{
+			get => selectedImage;
+			set
+			{
+				selectedImage = value;
+				if (selectedImage.IsNotNull())
+				{
+					DefaultImage.Visibility = Visibility.Collapsed;
+					RunnerPhoto.Visibility = Visibility.Visible;
+				}
+			}
+		}
 		private string SelectedImageName { get; set; }
 
 		public RunnerRegistrationPage(MainWindow mw)
@@ -44,13 +59,25 @@ namespace MarathonSkills.WpfApp.Pages
 
 		private void LoadPhotoButton_Click(object sender, RoutedEventArgs e)
 		{
-			var fd = new OpenFileDialog();
-			fd.Filter = "Image files (*.png;*.jpeg;*.jpg;*.bmp)|*.png;*.jpeg;*.jpg;*.bmp";//|All files (*.*)|*.*";
-			fd.ShowDialog();
-			SelectedImage = fd.FileName;
-			SelectedImageName = System.IO.Path.GetFileName(SelectedImage);
+			try
+			{
+				var fd = new OpenFileDialog();
+				fd.Filter = "Image files (*.png;*.jpeg;*.jpg;*.bmp)|*.png;*.jpeg;*.jpg;*.bmp";//|All files (*.*)|*.*";
+				fd.ShowDialog();
+				RunnerPhoto.SetSource(fd.FileName);
+				SelectedImage = fd.FileName;
+				
+				SelectedImageName = System.IO.Path.GetFileName(SelectedImage);
+				FileNameTB.Text = SelectedImageName;
+			}
+			catch (NotSupportedException)
+			{
+				ShowError("Ошибка загрузки файла.");
+			}			
+		}
 
-			FileNameTB.Text = SelectedImageName;
+		private void RegistrationButton_Click(object sender, RoutedEventArgs e)
+		{
 
 		}
 	}

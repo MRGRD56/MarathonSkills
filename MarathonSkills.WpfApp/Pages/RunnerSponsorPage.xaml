@@ -51,7 +51,7 @@
 						<TextBox x:Name="CardCvcTB" Width="50" MaxLength="3" PreviewTextInput="NumberTB_PreviewTextInput"/>
 					</StackPanel>
 				</StackPanel>
-				<StackPanel Margin="50 0 0 0" HorizontalAlignment="Center" Width="300">
+				<StackPanel Margin="20 0 0 0" HorizontalAlignment="Center" Width="350">
 					<Label Content="Благотворительность" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
 					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 						<Label x:Name="CharityNameLabel" Content="Выберите бегуна" FontSize="16" Margin="35 0 0 0"/>
