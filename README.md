@@ -35,7 +35,6 @@ MarathonSkills ~~2016~~ 2020
   <br>
 1.16 ✅
 </details>
-<br>
 <details>
   <summary>Сессия 2 🕔</summary>
   <br>
@@ -58,7 +57,7 @@ MarathonSkills ~~2016~~ 2020
 1.9 ❌
   <br>
 </details>
-
+<hr>
 <details>
   <summary>PS</summary>
   upd - update
