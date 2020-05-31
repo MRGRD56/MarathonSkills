@@ -11,7 +11,7 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="Я участвовал ранее" Style="{DynamicResource BigButton}" FontStyle="Italic" Margin="0 0 0 10" Click="Authorize_Click"/>
-            <Button Content="Я новый участник" Style="{DynamicResource BigButton}" FontStyle="Italic"/>
+            <Button Content="Я новый участник" Style="{DynamicResource BigButton}" FontStyle="Italic" Click="RunnerRegistration_Click"/>
         </StackPanel>
         <Button Content="Войти" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="85" Margin="0 0 15 15" 
                 Style="{DynamicResource SmallButton}"  Click="Authorize_Click"/>

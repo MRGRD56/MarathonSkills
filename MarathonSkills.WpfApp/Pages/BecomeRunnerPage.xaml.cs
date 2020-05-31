@@ -33,5 +33,10 @@ namespace MarathonSkills.WpfApp.Pages
         {
             MW.MainFrame.Navigate(new Pages.AuthorizationPage(MW));
         }
+
+        private void RunnerRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            MW.MainFrame.Navigate(new Pages.RunnerRegistrationPage(MW));
+        }
     }
 }

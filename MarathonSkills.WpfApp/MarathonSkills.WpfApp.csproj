@@ -92,6 +92,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RunnerRegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RunnerSponsor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +160,9 @@
     </Compile>
     <Compile Include="Pages\BecomeRunnerPage.xaml.cs">
       <DependentUpon>BecomeRunnerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RunnerRegistrationPage.xaml.cs">
+      <DependentUpon>RunnerRegistrationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RunnerSponsor.xaml.cs">
       <DependentUpon>RunnerSponsor.xaml</DependentUpon>
@@ -248,6 +255,10 @@
     <Resource Include="Images\CharityLogos\the-red-cross-logo.png" />
     <Resource Include="Images\CharityLogos\upbeat-logo.png" />
     <Resource Include="Images\CharityLogos\wwsm-rescue-logo.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\RunnersPhotos\TestPhoto.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
