@@ -13,7 +13,7 @@ namespace MarathonSkills.WpfApp.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202005311316583_Initial"; }
+            get { return "202005311332286_Initial"; }
         }
         
         string IMigrationMetadata.Source
