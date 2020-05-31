@@ -17,7 +17,10 @@ namespace MarathonSkills.WpfApp.ViewModel
 		public ObservableCollection<Gender> Genders { get; set; }
 
 		public ObservableCollection<Country> Countries { get; set; }
-		
+
+		private string SelectedImage { get; set; }
+		private string SelectedImageName { get; set; }
+
 		public RunnerRegistrationPageVM()
 		{
 			Genders = App.DbContext.Genders.ToObsCol();

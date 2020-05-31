@@ -126,6 +126,7 @@
     </Compile>
     <Compile Include="DataModels\Charity.cs" />
     <Compile Include="Extensions\IEnumerableExtension.cs" />
+    <Compile Include="Extensions\ImageExtension.cs" />
     <Compile Include="Extensions\Int32Extension.cs" />
     <Compile Include="DataModels\Country.cs" />
     <Compile Include="DataModels\Event.cs" />

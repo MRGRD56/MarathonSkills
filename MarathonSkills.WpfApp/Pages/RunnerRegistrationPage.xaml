@@ -63,8 +63,8 @@
 					</Grid>
 					<Label Content="Файл фотографии:" Style="{DynamicResource DarkGrayLabel}"/>
 					<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-						<TextBox Width="170"/>
-						<Button Style="{DynamicResource SmallButton}" Height="25" Width="100" Content="Просмотр..." Margin="10 0 0 0"/>
+						<TextBox x:Name="FileNameTB" Width="170" IsReadOnly="True"/>
+						<Button Style="{DynamicResource SmallButton}" Height="25" Width="100" Content="Просмотр..." Margin="10 0 0 0" Click="LoadPhotoButton_Click"/>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal" Margin="0 15" HorizontalAlignment="Right">
 						<Label Content="Дата рождения: " Style="{DynamicResource DarkGrayLabel}"/>

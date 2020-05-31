@@ -1,4 +1,5 @@
 ﻿using MarathonSkills.WpfApp.ViewModel;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,9 @@ namespace MarathonSkills.WpfApp.Pages
 
 		public RunnerRegistrationPageVM ThisContext { get; set; } = new RunnerRegistrationPageVM();
 
+		private string SelectedImage { get; set; }
+		private string SelectedImageName { get; set; }
+
 		public RunnerRegistrationPage(MainWindow mw)
 		{
 			InitializeComponent();
@@ -36,6 +40,18 @@ namespace MarathonSkills.WpfApp.Pages
 		private void CancelButton_Click(object sender, RoutedEventArgs e)
 		{
 			MW.MainFrame.GoBack();
+		}
+
+		private void LoadPhotoButton_Click(object sender, RoutedEventArgs e)
+		{
+			var fd = new OpenFileDialog();
+			fd.Filter = "Image files (*.png;*.jpeg;*.jpg;*.bmp)|*.png;*.jpeg;*.jpg;*.bmp";//|All files (*.*)|*.*";
+			fd.ShowDialog();
+			SelectedImage = fd.FileName;
+			SelectedImageName = System.IO.Path.GetFileName(SelectedImage);
+
+			FileNameTB.Text = SelectedImageName;
+
 		}
 	}
 }

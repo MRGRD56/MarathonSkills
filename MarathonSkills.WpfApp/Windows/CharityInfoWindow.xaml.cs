@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarathonSkills.WpfApp.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,7 @@ namespace MarathonSkills.WpfApp.Windows
 		{
 			InitializeComponent();
 			HeaderLabel.Content = orgName;
-			var bi = new BitmapImage();
-			bi.BeginInit();
-			bi.UriSource = new Uri(logoPath, UriKind.RelativeOrAbsolute);
-			bi.EndInit();
-			Logo.Source = bi;
+			Logo.SetSource(logoPath);
 			DercriptionTB.Text = description;
 		}
 	}
