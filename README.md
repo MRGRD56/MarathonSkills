@@ -59,3 +59,8 @@ MarathonSkills ~~2016~~ 2020
   <br>
 </details>
 
+<details>
+  <summary>PS</summary>
+  upd - update
+  ren - rename
+ </details>
