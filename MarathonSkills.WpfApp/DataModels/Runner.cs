@@ -39,5 +39,7 @@ namespace MarathonSkills.WpfApp.DataModels
         public virtual ICollection<Registration> Registrations { get; set; }
 
         public virtual User User { get; set; }
+
+        public byte[] Photo { get; set; }
     }
 }

@@ -135,11 +135,16 @@
     <Compile Include="DataModels\Marathon.cs" />
     <Compile Include="Extensions\MessageBoxExtension.cs" />
     <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="Extensions\RegexUtilities.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="MarathonSkillsDb.cs" />
-    <Compile Include="Migrations\202005231134541_Creation.cs" />
-    <Compile Include="Migrations\202005231134541_Creation.Designer.cs">
-      <DependentUpon>202005231134541_Creation.cs</DependentUpon>
+    <Compile Include="Migrations\202005311316583_Initial.cs" />
+    <Compile Include="Migrations\202005311316583_Initial.Designer.cs">
+      <DependentUpon>202005311316583_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005311317596_RunnerPhoto.cs" />
+    <Compile Include="Migrations\202005311317596_RunnerPhoto.Designer.cs">
+      <DependentUpon>202005311317596_RunnerPhoto.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pages\AdministratorMenuPage.xaml.cs">
@@ -223,8 +228,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202005231134541_Creation.resx">
-      <DependentUpon>202005231134541_Creation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005311316583_Initial.resx">
+      <DependentUpon>202005311316583_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005311317596_RunnerPhoto.resx">
+      <DependentUpon>202005311317596_RunnerPhoto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

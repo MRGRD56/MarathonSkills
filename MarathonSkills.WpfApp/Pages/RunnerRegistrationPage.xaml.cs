@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static MarathonSkills.WpfApp.Extensions.MessageBoxExtension;
+using static MarathonSkills.WpfApp.Extensions.RegexUtilities;
 
 namespace MarathonSkills.WpfApp.Pages
 {
@@ -78,6 +79,54 @@ namespace MarathonSkills.WpfApp.Pages
 
 		private void RegistrationButton_Click(object sender, RoutedEventArgs e)
 		{
+			#region ПРОВЕРКА ДАННЫХ
+			bool isAllFilled =
+				EmailTB.Text.IsNotNull() &&
+				Password1PB.Password.IsNotNull() &&
+				Password2PB.Password.IsNotNull() &&
+				FirstNameTB.Text.IsNotNull() &&
+				LastNameTB.Text.IsNotNull() &&
+				GenderCB.SelectedItem != null &&
+				RunnerPhoto.Source != null &&
+				BirthDateDP.SelectedDate != null &&
+				CountryCB.SelectedItem != null;
+			if (!isAllFilled)
+			{
+				ShowError("Не все поля заполнены!");
+				return;
+			}
+
+			if (!IsValidEmail(EmailTB.Text))
+			{
+				ShowError("Email введён неверно!");
+				return;
+			}
+
+			if (!IsValidPassword(Password1PB.Password))
+			{
+				ShowError(
+					"Пароль должен отвечать следующим требованиям:\n" +
+					"Минимум 6 символов\n" +
+					"Минимум 1 прописная буква\n" +
+					"Минимум 1 цифра\n" +
+					"По крайней мере один из следующих символов: ! @ # $ % ^");
+				return;
+			}
+
+			if (Password1PB.Password != Password2PB.Password)
+			{
+				ShowError("Введённые пароли не совпадают!");
+				return;
+			}
+
+			//TODO: может неправильно определяться возраст, изменить
+			if (!(DateTime.Now.Subtract(BirthDateDP.SelectedDate.Value).TotalDays > 365.25 * 10))
+			{
+				ShowError("Бегуну должно быть не менее 10 лет!");
+				return;
+			}
+			#endregion
+
 
 		}
 	}
