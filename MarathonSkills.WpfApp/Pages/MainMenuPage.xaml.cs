@@ -32,7 +32,7 @@ namespace MarathonSkills.WpfApp.Pages
 
 		private void RunnerRegister_Click(object sender, RoutedEventArgs e)
 		{
-			MW.MainFrame.Navigate(new Pages.RunnerRegisterPage(MW));
+			MW.MainFrame.Navigate(new Pages.BecomeRunnerPage(MW));
 		}
 
 		private void Authorize_Click(object sender, RoutedEventArgs e)

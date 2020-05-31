@@ -19,11 +19,11 @@ namespace MarathonSkills.WpfApp.Pages
     /// <summary>
     /// Логика взаимодействия для RunnerRegisterPage.xaml
     /// </summary>
-    public partial class RunnerRegisterPage
+    public partial class BecomeRunnerPage
     {
         public MainWindow MW { get; }
 
-        public RunnerRegisterPage(MainWindow mw)
+        public BecomeRunnerPage(MainWindow mw)
         {
             InitializeComponent();
             MW = mw;

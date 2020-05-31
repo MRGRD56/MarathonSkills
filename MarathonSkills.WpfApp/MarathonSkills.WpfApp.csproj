@@ -88,7 +88,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RunnerRegisterPage.xaml">
+    <Page Include="Pages\BecomeRunnerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,8 +154,8 @@
     <Compile Include="Pages\RunnerMenuPage.xaml.cs">
       <DependentUpon>RunnerMenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RunnerRegisterPage.xaml.cs">
-      <DependentUpon>RunnerRegisterPage.xaml</DependentUpon>
+    <Compile Include="Pages\BecomeRunnerPage.xaml.cs">
+      <DependentUpon>BecomeRunnerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RunnerSponsor.xaml.cs">
       <DependentUpon>RunnerSponsor.xaml</DependentUpon>

@@ -18,7 +18,7 @@ namespace MarathonSkills.WpfApp.ViewModel
 
 		public CharityListPageVM()
 		{
-			//Приравнивание Charities = App.DbContext.Charities с изменением Charity.CharityLogo
+			//Приравнивание Charities = App.DbContext.Charities с изменением Charity.CharityLogo.
 			Charities = App.DbContext.Charities.ToObsCol().Select(x => new Charity { CharityId = x.CharityId, CharityDescription = x.CharityDescription, 
 				CharityName = x.CharityName, Registrations = x.Registrations, CharityLogo = $"/Images/CharityLogos/{x.CharityLogo}"}).ToObsCol();
 		}
