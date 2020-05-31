@@ -26,5 +26,7 @@ namespace MarathonSkills.WpfApp.DataModels
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Volunteer> Volunteers { get; set; }
+
+        public override string ToString() => Gender1;
     }
 }

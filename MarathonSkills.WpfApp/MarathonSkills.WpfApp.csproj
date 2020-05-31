@@ -184,6 +184,7 @@
     </Compile>
     <Compile Include="ViewModel\CharityListPageVM.cs" />
     <Compile Include="ViewModel\RunnerExt.cs" />
+    <Compile Include="ViewModel\RunnerRegistrationPageVM.cs" />
     <Compile Include="ViewModel\RunnerSporsorPageVM.cs" />
     <Compile Include="Windows\AuthTypeWindow.xaml.cs">
       <DependentUpon>AuthTypeWindow.xaml</DependentUpon>

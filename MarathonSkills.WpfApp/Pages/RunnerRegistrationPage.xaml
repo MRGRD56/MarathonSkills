@@ -73,7 +73,7 @@
 					<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 						<Label Content="Страна: " Style="{DynamicResource DarkGrayLabel}"/>
 						<!--TODO binding-->
-						<ComboBox x:Name="CountryCB" Width="150"/>
+						<ComboBox x:Name="CountryCB" Width="150" ItemsSource="{Binding Path=Countries}"/>
 					</StackPanel>
 				</StackPanel>
 			</StackPanel>

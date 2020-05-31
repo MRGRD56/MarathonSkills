@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarathonSkills.WpfApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,10 +23,14 @@ namespace MarathonSkills.WpfApp.Pages
 	{
 		private MainWindow MW { get; }
 
+		public RunnerRegistrationPageVM ThisContext { get; set; } = new RunnerRegistrationPageVM();
+
 		public RunnerRegistrationPage(MainWindow mw)
 		{
 			InitializeComponent();
 			MW = mw;
+
+			DataContext = ThisContext;
 		}
 
 		private void CancelButton_Click(object sender, RoutedEventArgs e)
