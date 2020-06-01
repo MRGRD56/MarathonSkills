@@ -1,4 +1,5 @@
-﻿using MarathonSkills.WpfApp.Pages;
+﻿using MarathonSkills.WpfApp.DataModels;
+using MarathonSkills.WpfApp.Pages;
 using MarathonSkills.WpfApp.Windows;
 using System;
 using System.Collections.Generic;
@@ -248,6 +249,13 @@ namespace MarathonSkills.WpfApp
 					MessageBox.Show("Неизвестная ошибка.");
 					break;
 			}
+		}
+
+		public void Auth(User user)
+		{
+			App.CurrentUser = user;
+
+			LogoutButton.Visibility = Visibility.Visible;
 		}
 	}
 }

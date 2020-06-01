@@ -193,6 +193,7 @@
       <DependentUpon>SponsorshipConfirmationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\CharityListPageVM.cs" />
+    <Compile Include="ViewModel\EventRegisterPageVM.cs" />
     <Compile Include="ViewModel\RunnerExt.cs" />
     <Compile Include="ViewModel\RunnerRegistrationPageVM.cs" />
     <Compile Include="ViewModel\RunnerSporsorPageVM.cs" />
@@ -267,7 +268,9 @@
     <Resource Include="Images\CharityLogos\upbeat-logo.png" />
     <Resource Include="Images\CharityLogos\wwsm-rescue-logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\Menus\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\RunnersPhotos\TestPhoto.png" />
   </ItemGroup>

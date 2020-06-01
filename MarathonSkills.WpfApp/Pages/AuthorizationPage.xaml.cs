@@ -74,9 +74,7 @@ namespace MarathonSkills.WpfApp.Pages
                 return;
             }
 
-            App.CurrentUser = user;
-
-            MW.LogoutButton.Visibility = Visibility.Visible;
+            MW.Auth(user);
 
             MW.GoToMenu(ChosenTypeString);
         }

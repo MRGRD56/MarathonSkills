@@ -1,4 +1,5 @@
-﻿using MarathonSkills.WpfApp.Extensions;
+﻿using MarathonSkills.WpfApp.DataModels;
+using MarathonSkills.WpfApp.Extensions;
 using MarathonSkills.WpfApp.ViewModel;
 using Microsoft.Win32;
 using System;
@@ -15,7 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static MarathonSkills.WpfApp.Extensions.MessageBoxExtension;
+using static MarathonSkills.WpfApp.Extensions.MBoxExt;
 using static MarathonSkills.WpfApp.Extensions.RegexUtilities;
 
 namespace MarathonSkills.WpfApp.Pages
@@ -127,7 +128,32 @@ namespace MarathonSkills.WpfApp.Pages
 			}
 			#endregion
 
+			//EmailTB, Password1PB, FirstNameTB, LastNameTB, GenderCB, SelectedImage, BirthDateDP, CountryCB
+			var email = EmailTB.Text.Trim();
+			var pswd = Password1PB.Password;
+			var fName = FirstNameTB.Text.Trim();
+			var lName = LastNameTB.Text.Trim();
+			var gender = (Gender)GenderCB.SelectedItem;
+			var imgPath = SelectedImage;
+			var bDate = BirthDateDP.SelectedDate.Value;
+			var country = (Country)CountryCB.SelectedItem;
 
+
+			MW.MainFrame.Navigate(new EventRegisterPage(MW, email, pswd, fName, lName, gender, imgPath, bDate, country));
+		}
+
+		private void DebugButton_Click(object sender, RoutedEventArgs e)
+		{
+			var email = "login@gmail.com";
+			var pswd = "123qwe@";
+			var fName = "Lorem";
+			var lName = "Ipsum";
+			var gender = App.DbContext.Genders.ToList().First();
+			var imgPath = @"D:\1\Downloads\TestPhoto.png";
+			var bDate = DateTime.Parse("2002-11-22");
+			var country = App.DbContext.Countries.ToList().First();
+
+			MW.MainFrame.Navigate(new EventRegisterPage(MW, email, pswd, fName, lName, gender, imgPath, bDate, country));
 		}
 	}
 }
