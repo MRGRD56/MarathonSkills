@@ -22,7 +22,7 @@
 							<Setter Property="FontSize" Value="14"/>
 						</Style>
 					</StackPanel.Resources>
-					<Label Content="Информация о спонсоре" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
+					<Label Content="Информация о спонсоре" Style="{DynamicResource LightGrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
 					<StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Right">
 						<Label Content="Ваше имя: " Style="{DynamicResource DarkGrayLabel}"/>
 						<TextBox x:Name="SponsorNameTB"/>
@@ -52,13 +52,13 @@
 					</StackPanel>
 				</StackPanel>
 				<StackPanel Margin="20 0 0 0" HorizontalAlignment="Center" Width="350">
-					<Label Content="Благотворительность" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
+					<Label Content="Благотворительность" Style="{DynamicResource LightGrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
 					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 						<Label x:Name="CharityNameLabel" Content="Выберите бегуна" FontSize="16" Margin="35 0 0 0"/>
 						<Image Source="/Images/outline_info_black_24dp.png" Margin="20 0 0 0" MouseLeftButtonDown="ShowCharityInfo" Cursor="Hand" ToolTip="Информация о благотворительной организации."/>
 					</StackPanel>
-					<Label Content="Сумма пожертвования" Style="{DynamicResource GrayHeader}" FontSize="18" HorizontalAlignment="Center" Margin="0 20 0 0"/>
-					<Label x:Name="SumLabel" Content="$50" HorizontalAlignment="Center" FontSize="50" Foreground="Gray" FontWeight="DemiBold" Padding="0"/>
+					<Label Content="Сумма пожертвования" Style="{DynamicResource LightGrayHeader}" FontSize="18" HorizontalAlignment="Center" Margin="0 20 0 0"/>
+					<Label x:Name="SumLabel" Content="$50" HorizontalAlignment="Center" FontSize="50" Foreground="#999999" FontWeight="DemiBold" Padding="0"/>
 					<StackPanel Orientation="Horizontal" Height="25" Margin="0 8 0 0" HorizontalAlignment="Center">
 						<Button x:Name="MinusButton" Content="-" FontSize="18" Padding="0" Width="30" Height="25" FontWeight="Bold" Style="{DynamicResource SmallButton}" Click="MinusButton_Click"/>
 						<TextBox x:Name="SumTB" Width="70" Margin="8 0" FontSize="14" Text="50" HorizontalContentAlignment="Center" TextChanged="SumTB_TextChanged" PreviewTextInput="NumberTB_PreviewTextInput"/>

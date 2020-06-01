@@ -14,8 +14,8 @@
 			<Label Content="              Спасибо за поддержку бегуна в Marathon Skills 2016!&#xD;&#xA;Ваше пожертвование пойдет в его благотворительную организацию" 
 				   HorizontalAlignment="Center" Style="{DynamicResource DarkGrayLabel}"/>
 			<Label x:Name="RunnerInfoLabel" Content="Иван Прудов из России" HorizontalAlignment="Center" FontSize="20" Margin="0 15 0 5"/>
-			<Label x:Name="CharityNameLabel" Content="Фонд Кошек" HorizontalAlignment="Center" FontSize="28" Foreground="Gray"/>
-			<Label x:Name="SumLabel" Content="$50" HorizontalAlignment="Center" FontSize="72" Foreground="Gray"/>
+			<Label x:Name="CharityNameLabel" Content="Фонд Кошек" HorizontalAlignment="Center" FontSize="28" Foreground="#999999"/>
+			<Label x:Name="SumLabel" Content="$50" HorizontalAlignment="Center" FontSize="72" Foreground="#999999"/>
 			<Button Content="Назад" Style="{DynamicResource SmallButton}" Width="70" Height="25" Margin="0 15 0 0" Click="BackButton_Click"/>
 		</StackPanel>
 	</Grid>

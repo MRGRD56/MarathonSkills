@@ -84,6 +84,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\EventRegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RunnerMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +161,9 @@
     </Compile>
     <Compile Include="Pages\EventInfoMenuPage.xaml.cs">
       <DependentUpon>EventInfoMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventRegisterPage.xaml.cs">
+      <DependentUpon>EventRegisterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RunnerMenuPage.xaml.cs">
       <DependentUpon>RunnerMenuPage.xaml</DependentUpon>
