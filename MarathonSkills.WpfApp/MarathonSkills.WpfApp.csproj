@@ -64,47 +64,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Pages\AdministratorMenuPage.xaml">
+    <Page Include="Pages\UsersMenus\Administrator\AdministratorMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\AuthorizationPage.xaml">
+    <Page Include="Pages\LoginPages\AuthorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CharityListPage.xaml">
+    <Page Include="Pages\GuestsMenus\CharityListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CoordinatorMenuPage.xaml">
+    <Page Include="Pages\UsersMenus\Coordinator\CoordinatorMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\EventInfoMenuPage.xaml">
+    <Page Include="Pages\GuestsMenus\EventInfoMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\EventRegisterPage.xaml">
+    <Page Include="Pages\RegistrationPages\EventRegisterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RunnerMenuPage.xaml">
+    <Page Include="Pages\UsersMenus\Runner\RunnerMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\BecomeRunnerPage.xaml">
+    <Page Include="Pages\GuestsMenus\BecomeRunnerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RunnerRegistrationPage.xaml">
+    <Page Include="Pages\RegistrationPages\RunnerRegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RunnerSponsorPage.xaml">
+    <Page Include="Pages\RegistrationPages\RunnerSponsorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\SponsorshipConfirmationPage.xaml">
+    <Page Include="Pages\Confirmations\SponsorshipConfirmationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,34 +147,34 @@
       <DependentUpon>202005311332286_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Pages\AdministratorMenuPage.xaml.cs">
+    <Compile Include="Pages\UsersMenus\Administrator\AdministratorMenuPage.xaml.cs">
       <DependentUpon>AdministratorMenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AuthorizationPage.xaml.cs">
+    <Compile Include="Pages\LoginPages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CharityListPage.xaml.cs">
+    <Compile Include="Pages\GuestsMenus\CharityListPage.xaml.cs">
       <DependentUpon>CharityListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CoordinatorMenuPage.xaml.cs">
+    <Compile Include="Pages\UsersMenus\Coordinator\CoordinatorMenuPage.xaml.cs">
       <DependentUpon>CoordinatorMenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EventInfoMenuPage.xaml.cs">
+    <Compile Include="Pages\GuestsMenus\EventInfoMenuPage.xaml.cs">
       <DependentUpon>EventInfoMenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EventRegisterPage.xaml.cs">
+    <Compile Include="Pages\RegistrationPages\EventRegisterPage.xaml.cs">
       <DependentUpon>EventRegisterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RunnerMenuPage.xaml.cs">
+    <Compile Include="Pages\UsersMenus\Runner\RunnerMenuPage.xaml.cs">
       <DependentUpon>RunnerMenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BecomeRunnerPage.xaml.cs">
+    <Compile Include="Pages\GuestsMenus\BecomeRunnerPage.xaml.cs">
       <DependentUpon>BecomeRunnerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RunnerRegistrationPage.xaml.cs">
+    <Compile Include="Pages\RegistrationPages\RunnerRegistrationPage.xaml.cs">
       <DependentUpon>RunnerRegistrationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RunnerSponsorPage.xaml.cs">
+    <Compile Include="Pages\RegistrationPages\RunnerSponsorPage.xaml.cs">
       <DependentUpon>RunnerSponsorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataModels\Position.cs" />
@@ -189,7 +189,7 @@
     <Compile Include="DataModels\Timesheet.cs" />
     <Compile Include="DataModels\User.cs" />
     <Compile Include="DataModels\Volunteer.cs" />
-    <Compile Include="Pages\SponsorshipConfirmationPage.xaml.cs">
+    <Compile Include="Pages\Confirmations\SponsorshipConfirmationPage.xaml.cs">
       <DependentUpon>SponsorshipConfirmationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\CharityListPageVM.cs" />
@@ -210,13 +210,13 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\MainMenuPage.xaml">
+    <Page Include="Pages\GuestsMenus\MainMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\MainMenuPage.xaml.cs">
+    <Compile Include="Pages\GuestsMenus\MainMenuPage.xaml.cs">
       <DependentUpon>MainMenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -268,9 +268,7 @@
     <Resource Include="Images\CharityLogos\upbeat-logo.png" />
     <Resource Include="Images\CharityLogos\wwsm-rescue-logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\Menus\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\RunnersPhotos\TestPhoto.png" />
   </ItemGroup>
