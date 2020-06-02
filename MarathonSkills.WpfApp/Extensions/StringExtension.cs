@@ -14,5 +14,8 @@ namespace MarathonSkills.WpfApp.Extensions
 		/// <param name="str">Строка.</param>
 		/// <returns>Не имеет значение null.</returns>
 		public static bool IsNotNull(this string str) => !string.IsNullOrEmpty(str);
+
+		public static byte[] ImgToByteArray(this string path) => 
+			System.IO.File.ReadAllBytes(path);
 	}
 }

@@ -126,6 +126,12 @@ namespace MarathonSkills.WpfApp.Pages
 				ShowError("Бегуну должно быть не менее 10 лет!");
 				return;
 			}
+
+			if (App.DbContext.Users.Where(x => x.Email == EmailTB.Text.Trim()).Any())
+			{
+				ShowError("Пользователь с указаным email уже зарегистрирован!");
+				return;
+			}
 			#endregion
 
 			//EmailTB, Password1PB, FirstNameTB, LastNameTB, GenderCB, SelectedImage, BirthDateDP, CountryCB
@@ -152,6 +158,12 @@ namespace MarathonSkills.WpfApp.Pages
 			var imgPath = @"D:\1\Downloads\TestPhoto.png";
 			var bDate = DateTime.Parse("2002-11-22");
 			var country = App.DbContext.Countries.ToList().First();
+
+			if (App.DbContext.Users.Where(x => x.Email == EmailTB.Text.Trim()).Any())
+			{
+				ShowError("Пользователь с указаным email уже зарегистрирован!");
+				return;
+			}
 
 			MW.MainFrame.Navigate(new EventRegisterPage(MW, email, pswd, fName, lName, gender, imgPath, bDate, country));
 		}

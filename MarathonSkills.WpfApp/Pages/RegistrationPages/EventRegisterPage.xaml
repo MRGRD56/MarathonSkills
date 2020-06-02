@@ -53,9 +53,9 @@
 					</StackPanel.Resources>
 					<Label Content="Варианты комплектов" Style="{DynamicResource LightGrayHeader}" FontSize="18" HorizontalAlignment="Center"/>
 					<StackPanel x:Name="ComplectsRBs">
-						<RadioButton Content="Вариант A ($0): Номер бегуна +&#xD;&#xA;RFID браслет." Checked="CheckBox_CheckedUnchecked" Unchecked="CheckBox_CheckedUnchecked" Tag="0"/>
-						<RadioButton Content="Вариант B ($20): Вариант A + &#xD;&#xA;бейсболка + бутылка воды." Checked="CheckBox_CheckedUnchecked" Unchecked="CheckBox_CheckedUnchecked" Tag="20"/>
-						<RadioButton Content="Вариант C ($45): Вариант B +&#xD;&#xA;футболка + сувенирный буклет." Checked="CheckBox_CheckedUnchecked" Unchecked="CheckBox_CheckedUnchecked" Tag="45"/>
+						<RadioButton x:Name="OptionA" Content="Вариант A ($0): Номер бегуна +&#xD;&#xA;RFID браслет." Checked="CheckBox_CheckedUnchecked" Unchecked="CheckBox_CheckedUnchecked" Tag="0"/>
+						<RadioButton x:Name="OptionB" Content="Вариант B ($20): Вариант A + &#xD;&#xA;бейсболка + бутылка воды." Checked="CheckBox_CheckedUnchecked" Unchecked="CheckBox_CheckedUnchecked" Tag="20"/>
+						<RadioButton x:Name="OptionC" Content="Вариант C ($45): Вариант B +&#xD;&#xA;футболка + сувенирный буклет." Checked="CheckBox_CheckedUnchecked" Unchecked="CheckBox_CheckedUnchecked" Tag="45"/>
 					</StackPanel>
 					<Label Content="Регистрационный взнос" Style="{DynamicResource LightGrayHeader}" FontSize="18" HorizontalAlignment="Center" Margin="0 15 0 5"/>
 					<Label x:Name="AllSumLabel" Content="$5" HorizontalAlignment="Center" FontSize="50" Foreground="#999999" FontWeight="DemiBold" Padding="0"/>

@@ -142,7 +142,55 @@ namespace MarathonSkills.WpfApp.Pages
 			}
 			#endregion
 
-			
+			RaceKitOption raceKit = null;
+			if (OptionA.IsChecked == true) raceKit = App.DbContext.RaceKitOptions.ToList()[0];
+			else
+			if (OptionB.IsChecked == true) raceKit = App.DbContext.RaceKitOptions.ToList()[1];
+			else
+			if (OptionC.IsChecked == true) raceKit = App.DbContext.RaceKitOptions.ToList()[2];
+
+
+			//Email, Password, FirstName, LastName, Gender, byte[] Photo, DateOfBirth, Country.CountryCode
+			////TABLES: Registration, Runner, User
+			var user = new User
+			{
+				Email = this.Email,
+				Password = this.Password,
+				FirstName = this.FirstName,
+				LastName = this.LastName,
+				Role = App.DbContext.Roles.Where(x => x.RoleId == "R").First()
+			};
+			App.DbContext.Users.Add(user);
+			App.DbContext.SaveChanges(); //TODO: EXCEPTION
+			/* SqlException: Нарушено "pk_User" ограничения PRIMARY KEY. Не удается вставить повторяющийся ключ в объект "dbo.User". 
+			   Повторяющееся значение ключа: (login@gmail.com). Выполнение данной инструкции было прервано.*/
+
+			var runner = new Runner
+			{
+				Email = App.DbContext.Users.ToList().Last().Email,
+				Gender1 = this.Gender,
+				DateOfBirth = this.BirthDate,
+				CountryCode = this.Country.CountryCode,
+				Photo = ImagePath.ImgToByteArray()
+			};
+			App.DbContext.Runners.Add(runner);
+			App.DbContext.SaveChanges();
+
+			var registration = new Registration
+			{
+				RunnerId = App.DbContext.Runners.ToList().Last().RunnerId,
+				RegistrationDateTime = DateTime.Now,
+				RaceKitOption = raceKit,
+				RegistrationStatusId = App.DbContext.RegistrationStatus.ToList()[0].RegistrationStatusId,
+				Cost = (decimal)AllSum,
+				CharityId = ((Charity)CharityCB.SelectedItem).CharityId,
+				SponsorshipTarget = 0
+			};
+			App.DbContext.Registrations.Add(registration);
+			App.DbContext.SaveChanges();
+
+			MW.Auth(App.DbContext.Users.Last());
+			MW.MainFrame.Navigate(new Pages.RunnerRegistrationConfirmationPage(MW));
 		}
 	}
 }

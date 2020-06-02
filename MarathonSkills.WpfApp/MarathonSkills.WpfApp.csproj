@@ -44,8 +44,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -64,6 +66,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\Confirmations\RunnerRegistrationConfirmationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\UsersMenus\Administrator\AdministratorMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,6 +153,9 @@
       <DependentUpon>202005311332286_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Pages\Confirmations\RunnerRegistrationConfirmationPage.xaml.cs">
+      <DependentUpon>RunnerRegistrationConfirmationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UsersMenus\Administrator\AdministratorMenuPage.xaml.cs">
       <DependentUpon>AdministratorMenuPage.xaml</DependentUpon>
     </Compile>
