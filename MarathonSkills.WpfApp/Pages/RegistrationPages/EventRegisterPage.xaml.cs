@@ -166,7 +166,7 @@ namespace MarathonSkills.WpfApp.Pages
 
 			var runner = new Runner
 			{
-				Email = App.DbContext.Users.ToList().Last().Email,
+				Email = this.Email,
 				Gender1 = this.Gender,
 				DateOfBirth = this.BirthDate,
 				CountryCode = this.Country.CountryCode,
