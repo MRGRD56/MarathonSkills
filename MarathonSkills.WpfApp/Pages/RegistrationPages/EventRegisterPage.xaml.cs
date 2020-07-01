@@ -25,14 +25,14 @@ namespace MarathonSkills.WpfApp.Pages
 	{
 		private MainWindow MW { get; }
 
-		private string Email;
-		private string Password;
-		private string FirstName;
-		private string LastName;
-		private Gender Gender;
-		private string ImagePath;
-		private DateTime BirthDate;
-		private Country Country;
+		private readonly string Email;
+		private readonly string Password;
+		private readonly string FirstName;
+		private readonly string LastName;
+		private readonly Gender Gender;
+		private readonly string ImagePath;
+		private readonly DateTime BirthDate;
+		private readonly Country Country;
 
 		private double allSum;
 		private double AllSum
@@ -127,13 +127,15 @@ namespace MarathonSkills.WpfApp.Pages
 			#region ПРОВЕРКА ДАННЫХ
 			////НАЛИЧИЕ ДАННЫХ
 			//EventTypeCBs
-			var b1 = EventTypeCBs.Children.OfType<CheckBox>().ToList()
-				.Where(x => x.IsChecked == true).Any();
+			var b1 = EventTypeCBs.Children.OfType<CheckBox>()
+				.ToList()
+				.Any(x => x.IsChecked == true);
 			//CharityCB
 			var b2 = CharityCB.SelectedItem != null;
 			//ComplectsRBs
-			var b3 = ComplectsRBs.Children.OfType<RadioButton>().ToList()
-				.Where(x => x.IsChecked == true).Any();
+			var b3 = ComplectsRBs.Children.OfType<RadioButton>()
+				.ToList()
+				.Any(x => x.IsChecked == true);
 
 			if (!(b1 && b2 && b3))
 			{
@@ -158,11 +160,9 @@ namespace MarathonSkills.WpfApp.Pages
 				Password = this.Password,
 				FirstName = this.FirstName,
 				LastName = this.LastName,
-				Role = App.DbContext.Roles.Where(x => x.RoleId == "R").First()
+				Role = App.DbContext.Roles.First(x => x.RoleId == "R")
 			});
-			App.DbContext.SaveChanges(); //TODO: EXCEPTION
-			/* SqlException: Нарушено "pk_User" ограничения PRIMARY KEY. Не удается вставить повторяющийся ключ в объект "dbo.User". 
-			   Повторяющееся значение ключа: (login@gmail.com). Выполнение данной инструкции было прервано.*/
+			App.DbContext.SaveChanges();
 
 			var runner = new Runner
 			{

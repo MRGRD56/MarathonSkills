@@ -64,10 +64,9 @@ namespace MarathonSkills.WpfApp.Pages
                 return;
             }
             var user = App.DbContext.Users
-                .Where(x => x.Email == EmailTB.Text.Trim() &&
-                    x.Password == PasswordPB.Password &&
-                    x.RoleId == ChosenTypeString)
-                .FirstOrDefault();
+	            .FirstOrDefault(x => x.Email == EmailTB.Text.Trim() &&
+	                                 x.Password == PasswordPB.Password &&
+	                                 x.RoleId == ChosenTypeString);
             if (user == default)
             {
                 ShowError("Неверный логин или пароль!");

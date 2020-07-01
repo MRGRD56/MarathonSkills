@@ -16,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MarathonSkills.WpfApp.Extensions;
+
 //using Microsoft.Win32;
 
 namespace MarathonSkills.WpfApp
@@ -121,10 +123,10 @@ namespace MarathonSkills.WpfApp
 			return "минут";
 		}
 
-		/// <summary>
-		/// Возвращает слово, указываемое после количества секунд.
-		/// </summary>
-		/// <param name="s">Количество секунд.</param>
+		// /// <summary>
+		// /// Возвращает слово, указываемое после количества секунд.
+		// /// </summary>
+		// /// <param name="s">Количество секунд.</param>
 		//private string GetSecondsWord(int s)
 		//{
 		//	if (s == 1 || s == 21 || s == 31 || s == 41 || s == 51)
@@ -203,10 +205,9 @@ namespace MarathonSkills.WpfApp
 		private void SetActualWindowTitle()
 		{
 			var curPage = (Page)MainFrame.Content;
-			if (curPage.Title == "MainMenuPage")
-				Title = "Marathon Skills 2020";
-			else
-				Title = $"Marathon Skills 2020 - {curPage.Title}";
+			Title = curPage.Title == "MainMenuPage" 
+				? "Marathon Skills 2020" 
+				: $"Marathon Skills 2020 - {curPage.Title}";
 		}
 
 		private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -215,8 +216,6 @@ namespace MarathonSkills.WpfApp
 			{
 				case Key.Escape:
 					FrameGoBack();
-					break;
-				default:
 					break;
 			}
 		}

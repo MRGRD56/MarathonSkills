@@ -151,7 +151,7 @@ namespace MarathonSkills.WpfApp.Pages
 		{
 			var sel = (RunnerExt)RunnersCB.SelectedItem;
 			//MessageBox.Show(sel.ToString());
-			thisDataContext.SelectedCharity = App.DbContext.Charities.ToObsCol().Where(x => x.CharityId == sel.CharityId).FirstOrDefault();
+			thisDataContext.SelectedCharity = App.DbContext.Charities.ToObsCol().FirstOrDefault(x => x.CharityId == sel.CharityId);
 			CharityNameLabel.Content = thisDataContext.SelectedCharity?.CharityName;
 		}
 	}

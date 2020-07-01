@@ -18,8 +18,8 @@ namespace MarathonSkills.WpfApp.ViewModel
 
 		public ObservableCollection<Country> Countries { get; set; }
 
-		private string SelectedImage { get; set; }
-		private string SelectedImageName { get; set; }
+		//private string SelectedImage { get; set; }
+		//private string SelectedImageName { get; set; }
 
 		public RunnerRegistrationPageVM()
 		{

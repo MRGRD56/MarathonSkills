@@ -127,7 +127,7 @@ namespace MarathonSkills.WpfApp.Pages
 				return;
 			}
 
-			if (App.DbContext.Users.Where(x => x.Email.ToLower() == EmailTB.Text.Trim().ToLower()).Any())
+			if (App.DbContext.Users.Any(x => x.Email.ToLower() == EmailTB.Text.Trim().ToLower()))
 			{
 				ShowError("Пользователь с указаным email уже зарегистрирован!");
 				return;

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MarathonSkills.WpfApp
+﻿namespace MarathonSkills.WpfApp.Extensions
 {
     public static class Int32Extension
     {
